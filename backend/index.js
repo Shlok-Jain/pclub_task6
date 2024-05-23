@@ -122,8 +122,8 @@ app.post('/markattendance',async(req,res)=> {
     const buffer = Buffer.from(base64Data, 'base64');
     const filename = uuidv4()+'.png'
     try{
-        fs.writeFileSync(path.join(__dirname,'Temp',filename),buffer)
-        const tempimgpath = path.join(__dirname,'Temp',filename)
+        fs.writeFileSync(path.join(__dirname,'Detection',filename),buffer)
+        const tempimgpath = path.join(__dirname,'Detection',filename)
         console.log("here\n")
         const descriptor = await getFaceDescriptor(tempimgpath)
         const bestMatch = await findBestMatch(descriptor)
